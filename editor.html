@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>JSON to XML</title>
+  </head>
+  <body>
+    <!-- copy the following three blocks (style, div, script) into a WordPress Divi "code" block -->
+    <!-- then, change the JS import line to https://josdejong.github.io/json-to-xml/index.js -->
+
+    <style>
+      #json-to-xml-editor {
+        display: flex;
+        width: 100%;
+        max-width: 1000px;
+        height: 300px;
+      }
+    </style>
+
+    <div id="json-to-xml-editor">
+      <span class="loading">Loading editor...</span>
+    </div>
+
+    <script type="module">
+      import { Editor } from './docs/index.js'
+
+      const xml = `<?xml version = "1.0" encoding = "UTF-8" ?>
+<User>
+  <Name>Joe</Name>
+  <Nickname>Big Joe</Nickname>
+  <Score>12.4</Score>
+  <Subscribed>true</Subscribed>
+  <Friends>
+    <Friend>Sarah</Friend>
+    <Friend>Robert</Friend>
+    <Friend>Paul</Friend>
+  </Friends>
+</User>`
+
+      const target = document.getElementById('json-to-xml-editor')
+      const editor = new Editor({ target, props: { xml } })
+      const loading = target.querySelector('span.loading')
+      target.removeChild(loading)
+    </script>
+  </body>
+</html>

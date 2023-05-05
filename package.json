@@ -1,0 +1,64 @@
+{
+  "name": "json-to-xml",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "rollup --config rollup.config.bundle.js",
+    "build:svelte": "vite build && npm run package",
+    "lint": "prettier --check --plugin-search-dir=. .",
+    "format": "prettier --write --plugin-search-dir=. .",
+    "preview": "vite preview",
+    "package": "svelte-kit sync && svelte-package && publint",
+    "prepublishOnly": "npm run package",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "svelte": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "svelte": "3.54.0"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-auto": "2.0.1",
+    "@sveltejs/kit": "1.16.1",
+    "@sveltejs/package": "2.0.2",
+    "prettier": "2.8.8",
+    "prettier-plugin-svelte": "2.10.0",
+    "publint": "0.1.11",
+    "sass": "1.62.1",
+    "svelte": "3.58.0",
+    "svelte-check": "3.3.1",
+    "tslib": "2.5.0",
+    "typescript": "5.0.4",
+    "vite": "4.3.5"
+  },
+  "svelte": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
+  "dependencies": {
+    "@codemirror/commands": "6.2.4",
+    "@codemirror/lang-json": "6.0.1",
+    "@codemirror/lang-xml": "6.0.2",
+    "@codemirror/lint": "6.2.1",
+    "@codemirror/state": "6.2.0",
+    "@codemirror/view": "6.11.0",
+    "@rollup/plugin-commonjs": "24.1.0",
+    "@rollup/plugin-json": "6.0.0",
+    "@rollup/plugin-node-resolve": "15.0.2",
+    "@rollup/plugin-terser": "0.4.1",
+    "@rollup/plugin-typescript": "11.1.0",
+    "codemirror": "6.0.1",
+    "rollup": "3.21.5",
+    "rollup-plugin-svelte": "7.1.4",
+    "svelte-preprocess": "5.0.3",
+    "x2js": "3.4.4",
+    "xml-formatter": "3.3.2"
+  }
+}
