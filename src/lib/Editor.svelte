@@ -7,7 +7,6 @@
   import { defaultKeymap, indentWithTab } from '@codemirror/commands'
   import { lintGutter } from '@codemirror/lint'
   import { onMount } from 'svelte'
-  // import * as xmlJs from 'xml-js'
   import X2JS from 'x2js'
   import xmlFormat from 'xml-formatter'
   import { disablePageScroll, enablePageScroll } from './pageScroll.js'
